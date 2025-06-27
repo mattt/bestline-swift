@@ -1,19 +1,19 @@
 # Swift Bestline
 
-A Swift package that wraps the [bestline][bestline] library,
-providing enhanced readline functionality with features like
-syntax highlighting, autocompletion, and history support.
+A Swift wrapper for [bestline][bestline]
+that makes it easy to build interactive command-line tools.
+This package gives you a fully-featured user prompt
+without the baggage of GNU readline.
 
 ## Features
 
 - [x] **Line editing** with emacs/vi key bindings
 - [x] **History support** with file persistence
 - [x] **Tab completion** with custom callbacks
-- [x] **Syntax hints** displayed in muted gray
-- [x] **Password mode** for secure input
+- [x] **Syntax hints** displayed inline
+- [x] **Password mode** for masked input
 - [x] **Multi-line editing** support
-- [x] **Unicode support**
-- [x] **Undo/redo** functionality
+- [x] **Unicode support** for diacritics, русский, Ελληνικά, 漢字, 仮名, 한글
 
 ## Installation
 
@@ -23,7 +23,7 @@ Add this package to your `Package.swift` dependencies:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/loopwork-ai/bestline-swift.git", from: "1.0.0")
+    .package(url: "https://github.com/loopwork/bestline-swift.git", from: "1.0.0")
 ]
 ```
 
@@ -59,15 +59,15 @@ if let input = Bestline.readLine(prompt: "> ", initialText: "Hello ") {
 > [!TIP]
 > When running without proper terminal capabilities
 > (e.g., in CI/CD pipelines, piped I/O, or unsupported terminals),
-> bestline automatically falls back to basic input mode 
+> bestline automatically falls back to basic input mode
 > without interactive features.
-> 
+>
 > **Full Mode** (all features available):
 > - Requires a real TTY (not piped input/output)
 > - Terminal type (`TERM` environment variable) must not be `dumb`, `cons25`, or > `emacs`
 > - Must support raw mode via termios
 > - Must support ANSI escape sequences
-> 
+>
 > **Fallback Mode** (basic line reading only):
 > - Used when terminal capabilities are insufficient
 > - No line editing, completion, hints, or history navigation
@@ -194,7 +194,7 @@ the corresponding opening bracket will be briefly highlighted.
 ### Emacs Mode
 
 Emacs mode enables advanced keyboard shortcuts for line editing.
-This provides a familiar experience to users of 
+This provides a familiar experience to users of
 readline, emacs, vi, and other editing software.
 
 ```swift
@@ -223,7 +223,7 @@ First, add the dependency to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/loopwork-ai/swift-bestline.git", from: "1.0.0"),
+    .package(url: "https://github.com/loopwork/swift-bestline.git", from: "1.0.0"),
     .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.0.0")
 ]
 ```
