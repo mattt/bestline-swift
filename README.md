@@ -23,7 +23,7 @@ Add this package to your `Package.swift` dependencies:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/loopwork/bestline-swift.git", from: "1.0.0")
+    .package(url: "https://github.com/mattt/bestline-swift.git", from: "1.0.0")
 ]
 ```
 
@@ -223,7 +223,7 @@ First, add the dependency to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/loopwork/swift-bestline.git", from: "1.0.0"),
+    .package(url: "https://github.com/mattt/swift-bestline.git", from: "1.0.0"),
     .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.0.0")
 ]
 ```
